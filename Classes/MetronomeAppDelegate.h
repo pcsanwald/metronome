@@ -13,6 +13,7 @@
     UIWindow *window;
 	MetronomeViewController *mvc;
 }
+-(NSString*) clickPath;
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 

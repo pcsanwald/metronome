@@ -22,10 +22,26 @@
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
 	mvc = [[MetronomeViewController alloc] init];
+	
+	// un-archive the click if it exists
+	NSString *clickPath = [self clickPath];
+	// unarchive it into an array
+	Click *click = [NSKeyedUnarchiver unarchiveObjectWithFile:clickPath];
+	
+	if (!click) {
+		click = [[Click alloc] init];
+	} 
+	
+	[mvc setClick:click];
+		
 	[window addSubview:[mvc view]];
     return YES;
 }
 
+-(NSString*) clickPath
+{
+	return pathInDocumentDirectory(@"Click.data");
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*
@@ -40,6 +56,9 @@
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
      */
+	//Archive possessions to a file
+	[NSKeyedArchiver archiveRootObject:[mvc click] toFile:[self clickPath]];
+	
 }
 
 
@@ -62,6 +81,7 @@
      Called when the application is about to terminate.
      See also applicationDidEnterBackground:.
      */
+	[self applicationDidEnterBackground:application];
 }
 
 
