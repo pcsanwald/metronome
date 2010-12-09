@@ -44,7 +44,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="IBUIButton" id="333205033">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">319</int>
 						<string key="NSFrame">{{70, 212}, {167, 82}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -73,7 +73,7 @@
 					</object>
 					<object class="IBUILabel" id="58083595">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">319</int>
 						<string key="NSFrame">{{90, 75}, {126, 112}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -98,8 +98,8 @@
 					</object>
 					<object class="IBUISlider" id="827401139">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{11, 380}, {284, 23}}</string>
+						<int key="NSvFlags">303</int>
+						<string key="NSFrame">{{11, 395}, {284, 23}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -109,7 +109,7 @@
 					</object>
 					<object class="IBUILabel" id="127187385">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">319</int>
 						<string key="NSFrame">{{90, 321}, {127, 51}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -292,7 +292,7 @@
 					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABBMAAAw9SAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAABBMAAAw8iAAA</bytes>
 					</object>
 				</object>
 			</object>
