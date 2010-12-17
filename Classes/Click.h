@@ -17,7 +17,7 @@
 	SystemSoundID clickSound;
 	
 }
-- (float) clickRateInMilliseconds;
+- (float) clickRateInSeconds;
 - (int) currentBeat;
 
 @property (nonatomic) BOOL isClicking;

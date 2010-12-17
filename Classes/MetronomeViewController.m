@@ -94,14 +94,24 @@ const int tempoRange = 200;
 	} else {
 		[click setIsClicking:YES];
 		[clicker setTitle:@"Stop" forState:UIControlStateNormal];
-		clickTimer = [NSTimer scheduledTimerWithTimeInterval:[click clickRateInMilliseconds] target:self selector:@selector(click:) userInfo:nil repeats:YES];
+		clickTimer = [NSTimer scheduledTimerWithTimeInterval:[click clickRateInSeconds] target:self selector:@selector(click:) userInfo:nil repeats:YES];
 	}
 }
 
 - (void)click:(id)sender
 {
-	AudioServicesPlaySystemSound([click clickSound]);
+	CABasicAnimation *fade = [CABasicAnimation animationWithKeyPath:@"opacity"];
+	[fade setDuration:[click clickRateInSeconds]];
+	[fade setFromValue:[NSNumber numberWithFloat:0.0]];
+	[fade setToValue:[NSNumber numberWithFloat:1.0]];
+	[fade setDelegate:self];
+	[[clickStatus layer] addAnimation:fade forKey:@"opacity"];
+	
 	[clickStatus setText:[NSString stringWithFormat:@"%d",[click currentBeat]]];
+	AudioServicesPlaySystemSound([click clickSound]);
+	
+	/* some basic animation to make the numbers fade nicer */
+	
 	[click setClickCount:[click clickCount]+1];
 }
 
@@ -118,7 +128,7 @@ const int tempoRange = 200;
 	// only reset the clicker if it's currently clicking
 	if ([click isClicking]) {
 		[clickTimer invalidate];
-		clickTimer = [NSTimer scheduledTimerWithTimeInterval:[click clickRateInMilliseconds] target:self selector:@selector(click:) userInfo:nil repeats:YES];
+		clickTimer = [NSTimer scheduledTimerWithTimeInterval:[click clickRateInSeconds] target:self selector:@selector(click:) userInfo:nil repeats:YES];
 	}
 	
 }

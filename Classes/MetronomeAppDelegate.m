@@ -29,7 +29,7 @@
 	Click *click = [NSKeyedUnarchiver unarchiveObjectWithFile:clickPath];
 	
 	if (!click) {
-		click = [[Click alloc] init];
+		click = [[[Click alloc] init] autorelease];
 	} 
 	
 	[mvc setClick:click];

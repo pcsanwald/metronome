@@ -13,7 +13,7 @@ const float secondsInMinute = 60.0;
 @implementation Click
 @synthesize isClicking, clickCount, clickSound, beatsPerMinute, numberOfBeatsToDisplay;
 
-- (float) clickRateInMilliseconds {
+- (float) clickRateInSeconds {
 	float interval = secondsInMinute/beatsPerMinute;
 	return interval;
 }
