@@ -15,7 +15,7 @@
 @interface MetronomeViewController : UIViewController {
 	NSTimer *clickTimer;
 	Click* click;
-	IBOutlet UIButton *clicker;
+	IBOutlet UIButton *clickerButton;
 	IBOutlet UIButton *decrementTempoButton;
 	IBOutlet UIButton *incrementTempoButton;
 	IBOutlet UILabel *clickStatus;
@@ -32,6 +32,7 @@
  */
 - (void)resetClick:(int)tempoValue;
 - (void)changeTempo:(int)changeByBPMs;
+- (void)buttonStyle:(UIButton*)button;
 
 @property (nonatomic, retain) NSTimer *clickTimer;
 @property (nonatomic, retain) Click *click;

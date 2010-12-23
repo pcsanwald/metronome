@@ -69,12 +69,25 @@ const int tempoRange = 200;
 	float tempoSliderValue = ([click beatsPerMinute] - minimumTempo)/(float)tempoRange;
 	tempoSlider.value = tempoSliderValue;
 
-	[clicker setTitle:@"Start" forState:UIControlStateNormal];
+	[clickerButton setTitle:@"Start" forState:UIControlStateNormal];
 	[clickStatus setText:[NSString stringWithFormat:@"%d beats",[click numberOfBeatsToDisplay]]];
 	[tempoLabel setText:[NSString stringWithFormat:@"%d BPM",[click beatsPerMinute]]];
 	
+	[self buttonStyle:clickerButton];
+	[self buttonStyle:decrementTempoButton];
+	[self buttonStyle:incrementTempoButton];
+	
 }
 
+- (void)buttonStyle:(UIButton*)button
+{
+	[[button layer] setCornerRadius:8.0f];
+	[[button layer] setMasksToBounds:YES];
+	[[button layer] setBorderWidth:1.0f];
+	
+	[button setBackgroundColor:[UIColor blackColor]];
+	[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+}
 /*
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -87,13 +100,13 @@ const int tempoRange = 200;
 {
 	if ([click isClicking]) {
 		[click setIsClicking:NO];
-		[clicker setTitle:@"Start" forState:UIControlStateNormal];
+		[clickerButton setTitle:@"Start" forState:UIControlStateNormal];
 		[clickTimer invalidate];
 		[clickStatus setText:[NSString stringWithFormat:@"%d beats",[click numberOfBeatsToDisplay]]];
 		[click setClickCount:0];
 	} else {
 		[click setIsClicking:YES];
-		[clicker setTitle:@"Stop" forState:UIControlStateNormal];
+		[clickerButton setTitle:@"Stop" forState:UIControlStateNormal];
 		clickTimer = [NSTimer scheduledTimerWithTimeInterval:[click clickRateInSeconds] target:self selector:@selector(click:) userInfo:nil repeats:YES];
 	}
 }
@@ -168,7 +181,7 @@ const int tempoRange = 200;
 
 - (void)dealloc {
 	[click release];
-	[clicker release];
+	[clickerButton release];
 	[clickStatus release];
 	[clickTimer release];
 	[tempoLabel release];
