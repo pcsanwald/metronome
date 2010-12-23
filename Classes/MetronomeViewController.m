@@ -109,28 +109,43 @@ const int tempoRange = 200;
 	
 	[clickStatus setText:[NSString stringWithFormat:@"%d",[click currentBeat]]];
 	AudioServicesPlaySystemSound([click clickSound]);
-	
-	/* some basic animation to make the numbers fade nicer */
-	
+		
 	[click setClickCount:[click clickCount]+1];
 }
 
-- (IBAction)tempoChanged:(id)sender
+- (IBAction)tempoSliderChanged:(id)sender
 {
 	// TODO: sort of a trivial calculation, but worth extrapolating into its own method maybe?
 	// might make refactoring a bit easier
 	
 	// The UISlider gives us float values of 0.0 - 1.0, convert them into the range we want.
 	int tempoValue = [tempoSlider value]*tempoRange + minimumTempo;
+
+	[self resetClick:tempoValue];	
+}
+
+- (void)resetClick:(int)tempoValue
+{
 	[tempoLabel setText:[NSString stringWithFormat:@"%d BPM",tempoValue]];
 	[click setBeatsPerMinute:tempoValue];
-	
-	// only reset the clicker if it's currently clicking
+
 	if ([click isClicking]) {
 		[clickTimer invalidate];
 		clickTimer = [NSTimer scheduledTimerWithTimeInterval:[click clickRateInSeconds] target:self selector:@selector(click:) userInfo:nil repeats:YES];
-	}
-	
+	}	
+}
+
+- (void)changeTempo:(int)changeByBPMs
+{
+	float newTempoInBPM = ([tempoSlider value]*tempoRange + minimumTempo) + changeByBPMs;
+	float newTempo = (newTempoInBPM - minimumTempo)/(float)tempoRange;	
+	[tempoSlider setValue:newTempo];
+	[self resetClick:newTempoInBPM];
+}
+
+- (IBAction)decrementTempo:(id)sender
+{
+	[self changeTempo:-1];
 }
 
 - (void)didReceiveMemoryWarning {

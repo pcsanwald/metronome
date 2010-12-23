@@ -16,13 +16,22 @@
 	NSTimer *clickTimer;
 	Click* click;
 	IBOutlet UIButton *clicker;
+	IBOutlet UIButton *decrementTempoButton;
+	IBOutlet UIButton *incrementTempoButton;
 	IBOutlet UILabel *clickStatus;
 	IBOutlet UISlider *tempoSlider;
 	IBOutlet UILabel *tempoLabel;
 
 }
 - (IBAction)clickerPressed:(id)sender;
-- (IBAction)tempoChanged:(id)sender;
+- (IBAction)tempoSliderChanged:(id)sender;
+- (IBAction)incrementTempo:(id)sender;
+- (IBAction)decrementTempo:(id)sender;
+/* TODO: make these private? 
+ * no great reason to have them as public methods
+ */
+- (void)resetClick:(int)tempoValue;
+- (void)changeTempo:(int)changeByBPMs;
 
 @property (nonatomic, retain) NSTimer *clickTimer;
 @property (nonatomic, retain) Click *click;
