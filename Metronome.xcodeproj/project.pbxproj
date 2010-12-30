@@ -45,7 +45,6 @@
 		655793D112A9A0C80072604E /* Click.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Click.h; sourceTree = "<group>"; };
 		655793D212A9A0C80072604E /* Click.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Click.m; sourceTree = "<group>"; };
 		655794B012AADBBE0072604E /* hihat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hihat.wav; sourceTree = "<group>"; };
-		655794CD12AB00E70072604E /* MetronomeUnitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MetronomeUnitTest-Info.plist"; sourceTree = "<group>"; };
 		6584E32612ABD3C200AD6DFB /* FileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelper.h; sourceTree = "<group>"; };
 		6584E32712ABD3C200AD6DFB /* FileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelper.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Metronome-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Metronome-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -103,7 +102,6 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				655793BC12A99ED90072604E /* AudioToolbox.framework */,
-				655794CD12AB00E70072604E /* MetronomeUnitTest-Info.plist */,
 				651E406812B9AFDB002323BA /* QuartzCore.framework */,
 			);
 			name = CustomTemplate;
