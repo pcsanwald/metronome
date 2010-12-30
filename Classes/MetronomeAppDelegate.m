@@ -20,7 +20,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after application launch.
-    [self.window makeKeyAndVisible];
 	mvc = [[MetronomeViewController alloc] init];
 	
 	// un-archive the click if it exists
@@ -30,11 +29,14 @@
 	
 	if (!click) {
 		click = [[[Click alloc] init] autorelease];
-	} 
-	
+	} 	
 	[mvc setClick:click];
-		
-	[window addSubview:[mvc view]];
+	
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mvc];
+	[[navController navigationBar] setBarStyle:UIBarStyleBlack];
+	[window addSubview:[navController view]];
+	
+    [self.window makeKeyAndVisible];	
     return YES;
 }
 

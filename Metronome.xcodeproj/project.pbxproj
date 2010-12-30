@@ -14,6 +14,8 @@
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		651E406912B9AFDB002323BA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651E406812B9AFDB002323BA /* QuartzCore.framework */; };
+		654D36A412C9745400EA1E63 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D36A212C9745400EA1E63 /* SettingsViewController.m */; };
+		654D36A512C9745400EA1E63 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 654D36A312C9745400EA1E63 /* SettingsViewController.xib */; };
 		655792B412A93B970072604E /* MetronomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655792B212A93B970072604E /* MetronomeViewController.m */; };
 		655792B512A93B970072604E /* MetronomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655792B312A93B970072604E /* MetronomeViewController.xib */; };
 		655793BD12A99ED90072604E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655793BC12A99ED90072604E /* AudioToolbox.framework */; };
@@ -33,6 +35,9 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Metronome_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Metronome_Prefix.pch; sourceTree = "<group>"; };
 		651E406812B9AFDB002323BA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		654D36A112C9745400EA1E63 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		654D36A212C9745400EA1E63 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		654D36A312C9745400EA1E63 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		655792B112A93B970072604E /* MetronomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetronomeViewController.h; sourceTree = "<group>"; };
 		655792B212A93B970072604E /* MetronomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetronomeViewController.m; sourceTree = "<group>"; };
 		655792B312A93B970072604E /* MetronomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MetronomeViewController.xib; sourceTree = "<group>"; };
@@ -41,8 +46,6 @@
 		655793D212A9A0C80072604E /* Click.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Click.m; sourceTree = "<group>"; };
 		655794B012AADBBE0072604E /* hihat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hihat.wav; sourceTree = "<group>"; };
 		655794CD12AB00E70072604E /* MetronomeUnitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MetronomeUnitTest-Info.plist"; sourceTree = "<group>"; };
-		655794D312AB01970072604E /* ClickTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClickTest.h; path = Test/ClickTest.h; sourceTree = "<group>"; };
-		655794D412AB01970072604E /* ClickTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClickTest.m; path = Test/ClickTest.m; sourceTree = "<group>"; };
 		6584E32612ABD3C200AD6DFB /* FileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelper.h; sourceTree = "<group>"; };
 		6584E32712ABD3C200AD6DFB /* FileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelper.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Metronome-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Metronome-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -76,6 +79,9 @@
 				655793D212A9A0C80072604E /* Click.m */,
 				6584E32612ABD3C200AD6DFB /* FileHelper.h */,
 				6584E32712ABD3C200AD6DFB /* FileHelper.m */,
+				654D36A112C9745400EA1E63 /* SettingsViewController.h */,
+				654D36A212C9745400EA1E63 /* SettingsViewController.m */,
+				654D36A312C9745400EA1E63 /* SettingsViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -98,8 +104,6 @@
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				655793BC12A99ED90072604E /* AudioToolbox.framework */,
 				655794CD12AB00E70072604E /* MetronomeUnitTest-Info.plist */,
-				655794D312AB01970072604E /* ClickTest.h */,
-				655794D412AB01970072604E /* ClickTest.m */,
 				651E406812B9AFDB002323BA /* QuartzCore.framework */,
 			);
 			name = CustomTemplate;
@@ -186,6 +190,7 @@
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				655792B512A93B970072604E /* MetronomeViewController.xib in Resources */,
 				655794B112AADBBE0072604E /* hihat.wav in Resources */,
+				654D36A512C9745400EA1E63 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +206,7 @@
 				655792B412A93B970072604E /* MetronomeViewController.m in Sources */,
 				655793D312A9A0C80072604E /* Click.m in Sources */,
 				6584E32912ABD3C200AD6DFB /* FileHelper.m in Sources */,
+				654D36A412C9745400EA1E63 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

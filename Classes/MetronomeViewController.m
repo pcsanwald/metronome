@@ -28,9 +28,18 @@ const int tempoRange = 200;
 	return self;
 }
 
+/*
+ * Allow autorotation
+ *
+ */
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
 	return YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[clickStatus setText:[NSString stringWithFormat:@"%d",[click numberOfBeatsToDisplay]]];
 }
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -70,20 +79,37 @@ const int tempoRange = 200;
 	tempoSlider.value = tempoSliderValue;
 
 	[clickerButton setTitle:@"Start" forState:UIControlStateNormal];
-	[clickStatus setText:[NSString stringWithFormat:@"%d beats",[click numberOfBeatsToDisplay]]];
+
 	[tempoLabel setText:[NSString stringWithFormat:@"%d BPM",[click beatsPerMinute]]];
 	
 	[self buttonStyle:clickerButton];
 	[self buttonStyle:decrementTempoButton];
 	[self buttonStyle:incrementTempoButton];
 	
+	settingsButton = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(viewSettings:)];
+	[[self navigationItem] setRightBarButtonItem:settingsButton];
+	[settingsButton release];
 }
 
+-(void)viewSettings:(id)sender
+{
+	/*
+	 * initialize the settings view controller
+	 */
+	
+	if (!settingsViewController) {
+		settingsViewController = [[SettingsViewController alloc] init];
+		[settingsViewController setClick:click];
+	}	
+	[[self navigationController] pushViewController:settingsViewController animated:YES];
+	
+}
 - (void)buttonStyle:(UIButton*)button
 {
 	[[button layer] setCornerRadius:8.0f];
 	[[button layer] setMasksToBounds:YES];
 	[[button layer] setBorderWidth:1.0f];
+	[[button layer] setBorderColor:[[UIColor grayColor] CGColor]];
 	
 	[button setBackgroundColor:[UIColor blackColor]];
 	[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -102,13 +128,14 @@ const int tempoRange = 200;
 		[click setIsClicking:NO];
 		[clickerButton setTitle:@"Start" forState:UIControlStateNormal];
 		[clickTimer invalidate];
-		[clickStatus setText:[NSString stringWithFormat:@"%d beats",[click numberOfBeatsToDisplay]]];
+		[clickStatus setText:[NSString stringWithFormat:@"%d",[click numberOfBeatsToDisplay]]];
 		[click setClickCount:0];
 	} else {
 		[click setIsClicking:YES];
 		[clickerButton setTitle:@"Stop" forState:UIControlStateNormal];
 		clickTimer = [NSTimer scheduledTimerWithTimeInterval:[click clickRateInSeconds] target:self selector:@selector(click:) userInfo:nil repeats:YES];
 	}
+
 }
 
 - (void)click:(id)sender
@@ -150,6 +177,10 @@ const int tempoRange = 200;
 
 - (void)changeTempo:(int)changeByBPMs
 {
+	float currentTempo = [tempoSlider value]*tempoRange + minimumTempo;
+	if (currentTempo >= tempoRange+minimumTempo || currentTempo <= minimumTempo) {
+		return;
+	}
 	float newTempoInBPM = ([tempoSlider value]*tempoRange + minimumTempo) + changeByBPMs;
 	float newTempo = (newTempoInBPM - minimumTempo)/(float)tempoRange;	
 	[tempoSlider setValue:newTempo];
