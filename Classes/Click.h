@@ -15,14 +15,18 @@
 	int clickCount;
 	int numberOfBeatsToDisplay;
 	SystemSoundID clickSound;
+	NSString* clickSoundName;
 	
 }
 - (float) clickRateInSeconds;
 - (int) currentBeat;
+- (void) setClickSoundUsingFilename:(NSString*) soundName;
+- (void) initClickSound;
 
 @property (nonatomic) BOOL isClicking;
 @property (nonatomic) int clickCount;
 @property (nonatomic) int beatsPerMinute;
 @property (nonatomic) int numberOfBeatsToDisplay;
 @property (nonatomic) SystemSoundID clickSound;
+@property (nonatomic,copy) NSString* clickSoundName;
 @end

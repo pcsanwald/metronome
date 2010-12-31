@@ -17,8 +17,6 @@ const int tempoRange = 200;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-	}
     return self;
 }
 
@@ -39,7 +37,9 @@ const int tempoRange = 200;
 
 - (void)viewWillAppear:(BOOL)animated
 {
-	[clickStatus setText:[NSString stringWithFormat:@"%d",[click numberOfBeatsToDisplay]]];
+	if (![click isClicking]) {
+		[clickStatus setText:[NSString stringWithFormat:@"%d",[click numberOfBeatsToDisplay]]];
+	}
 }
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -59,21 +59,13 @@ const int tempoRange = 200;
 	[click setIsClicking:NO];
 	[click setClickCount:0];
 
-
-	NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"hihat" ofType:@"wav"];
-	if (soundPath) {
-		NSURL *soundURL = [NSURL fileURLWithPath:soundPath];
-		// register sound file
-		SystemSoundID clickSound;
-		OSStatus err = AudioServicesCreateSystemSoundID((CFURLRef)soundURL, &clickSound);
-		[click setClickSound:clickSound];
-		if (err != kAudioServicesNoError) {
-			NSLog(@"Couldn't load %@, error code %d",soundURL,err);
-		}
-	} else {
-		NSLog(@"Could not load short sound!");
+	if (![click clickSoundName]) {
+		[click setClickSoundName:@"hihat"];
 	}
-
+	if (![click clickSound]) {
+		[click initClickSound];
+	}
+	
 	// set the initial value of the slider.
 	float tempoSliderValue = ([click beatsPerMinute] - minimumTempo)/(float)tempoRange;
 	tempoSlider.value = tempoSliderValue;
@@ -133,6 +125,12 @@ const int tempoRange = 200;
 	} else {
 		[click setIsClicking:YES];
 		[clickerButton setTitle:@"Stop" forState:UIControlStateNormal];
+		
+		// This is kind of a hack to smooth out the timer, as the first click
+		// is often not timed correctly, and happens too fast, which is a bad user
+		// experience. sleeping for half the click interval seems better from a UX perspective
+		[NSThread sleepForTimeInterval:[click clickRateInSeconds]/2];
+		
 		clickTimer = [NSTimer scheduledTimerWithTimeInterval:[click clickRateInSeconds] target:self selector:@selector(click:) userInfo:nil repeats:YES];
 	}
 
@@ -208,7 +206,6 @@ const int tempoRange = 200;
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
-
 
 - (void)dealloc {
 	[click release];
