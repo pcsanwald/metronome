@@ -14,6 +14,9 @@
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		65007D4C12CF7AF400A8FECF /* UISegmentedControl+InitHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 65007D4B12CF7AF400A8FECF /* UISegmentedControl+InitHelpers.m */; };
+		65007ED012CFE35B00A8FECF /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65007ECF12CFE35B00A8FECF /* MainWindow-iPad.xib */; };
+		65007ED812CFE43F00A8FECF /* MetronomeViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65007ED712CFE43F00A8FECF /* MetronomeViewController-iPad.xib */; };
+		65007EDC12CFE48100A8FECF /* SettingsViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65007EDB12CFE48100A8FECF /* SettingsViewController-iPad.xib */; };
 		651E406912B9AFDB002323BA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651E406812B9AFDB002323BA /* QuartzCore.framework */; };
 		654D36A412C9745400EA1E63 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D36A212C9745400EA1E63 /* SettingsViewController.m */; };
 		654D36A512C9745400EA1E63 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 654D36A312C9745400EA1E63 /* SettingsViewController.xib */; };
@@ -40,6 +43,9 @@
 		32CA4F630368D1EE00C91783 /* Metronome_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Metronome_Prefix.pch; sourceTree = "<group>"; };
 		65007D4A12CF7AF400A8FECF /* UISegmentedControl+InitHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISegmentedControl+InitHelpers.h"; sourceTree = "<group>"; };
 		65007D4B12CF7AF400A8FECF /* UISegmentedControl+InitHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISegmentedControl+InitHelpers.m"; sourceTree = "<group>"; };
+		65007ECF12CFE35B00A8FECF /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		65007ED712CFE43F00A8FECF /* MetronomeViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "MetronomeViewController-iPad.xib"; sourceTree = "<group>"; };
+		65007EDB12CFE48100A8FECF /* SettingsViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "SettingsViewController-iPad.xib"; sourceTree = "<group>"; };
 		651E406812B9AFDB002323BA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		654D36A112C9745400EA1E63 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		654D36A212C9745400EA1E63 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				65007ECE12CFE35B00A8FECF /* Resources-iPad */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				655793BC12A99ED90072604E /* AudioToolbox.framework */,
@@ -148,6 +155,16 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		65007ECE12CFE35B00A8FECF /* Resources-iPad */ = {
+			isa = PBXGroup;
+			children = (
+				65007ED712CFE43F00A8FECF /* MetronomeViewController-iPad.xib */,
+				65007EDB12CFE48100A8FECF /* SettingsViewController-iPad.xib */,
+				65007ECF12CFE35B00A8FECF /* MainWindow-iPad.xib */,
+			);
+			name = "Resources-iPad";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +223,9 @@
 				654D385612CD817F00EA1E63 /* Metronome_Icon.opacity in Resources */,
 				654D385812CD821A00EA1E63 /* Icon.png in Resources */,
 				659DC67F12CD96DA004D6653 /* stick.wav in Resources */,
+				65007ED012CFE35B00A8FECF /* MainWindow-iPad.xib in Resources */,
+				65007ED812CFE43F00A8FECF /* MetronomeViewController-iPad.xib in Resources */,
+				65007EDC12CFE48100A8FECF /* SettingsViewController-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +253,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -240,6 +261,8 @@
 				GCC_PREFIX_HEADER = Metronome_Prefix.pch;
 				INFOPLIST_FILE = "Metronome-Info.plist";
 				PRODUCT_NAME = Metronome;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -247,11 +270,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Metronome_Prefix.pch;
 				INFOPLIST_FILE = "Metronome-Info.plist";
 				PRODUCT_NAME = Metronome;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
