@@ -53,7 +53,7 @@
 		value = (NSString*)[clickSoundNamesToFileNames objectForKey:key];
 		fileName = key;
 	}
-	if (value == nil) {
+	if (value != nil) {
 		[clickSoundValue setSelectedSegmentForTitle:fileName];
 	}	
 	
