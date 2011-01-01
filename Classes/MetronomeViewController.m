@@ -106,13 +106,6 @@ const int tempoRange = 200;
 	[button setBackgroundColor:[UIColor blackColor]];
 	[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (IBAction)clickerPressed:(id)sender
 {
@@ -129,7 +122,7 @@ const int tempoRange = 200;
 		// This is kind of a hack to smooth out the timer, as the first click
 		// is often not timed correctly, and happens too fast, which is a bad user
 		// experience. sleeping for half the click interval seems better from a UX perspective
-		[NSThread sleepForTimeInterval:[click clickRateInSeconds]/2];
+		[NSThread sleepForTimeInterval:[click clickRateInSeconds]];
 		
 		clickTimer = [NSTimer scheduledTimerWithTimeInterval:[click clickRateInSeconds] target:self selector:@selector(click:) userInfo:nil repeats:YES];
 	}
@@ -138,6 +131,7 @@ const int tempoRange = 200;
 
 - (void)click:(id)sender
 {
+	
 	CABasicAnimation *fade = [CABasicAnimation animationWithKeyPath:@"opacity"];
 	[fade setDuration:[click clickRateInSeconds]];
 	[fade setFromValue:[NSNumber numberWithFloat:0.0]];

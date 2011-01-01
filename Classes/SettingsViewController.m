@@ -10,7 +10,7 @@
 
 
 @implementation SettingsViewController
-@synthesize click;
+@synthesize click,clickSoundValue;
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -40,26 +40,22 @@
 	clickSoundNamesToFileNames = [[NSMutableDictionary alloc] initWithCapacity:2];
 	[clickSoundNamesToFileNames setObject:@"hihat" forKey:@"hi hat"];
 	[clickSoundNamesToFileNames setObject:@"stick" forKey:@"rim shot"];
-	
-	NSArray *keyArray = [clickSoundNamesToFileNames allKeysForObject:[click clickSoundName]];
+
+	NSArray *keyArray = [clickSoundNamesToFileNames allKeysForObject:[click clickSoundName]];	
 	
 	/*
 	 * initialize the UISegmentedControlValue. sure seems like there should be an easier 
 	 * way to do this.
 	 */
-	NSString *value;
+	NSString *value = nil;
 	NSString *fileName;
-	for (NSString* key in keyArray) {
+	for (NSString* key in keyArray) {		
 		value = (NSString*)[clickSoundNamesToFileNames objectForKey:key];
 		fileName = key;
 	}
-	if (value) {
-		for (int i = 0; i < [clickSoundValue numberOfSegments]; i++) {
-			if ([fileName isEqualToString:[clickSoundValue titleForSegmentAtIndex:i]]) {
-				[clickSoundValue setSelectedSegmentIndex:i];
-			}
-		}
-	}
+	if (value == nil) {
+		[clickSoundValue setSelectedSegmentForTitle:fileName];
+	}	
 	
     [super viewDidLoad];
 }

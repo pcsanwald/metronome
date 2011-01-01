@@ -12,6 +12,7 @@
 @interface MetronomeAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
 	MetronomeViewController *mvc;
+	UINavigationController *navController;
 }
 -(NSString*) clickPath;
 

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Click.h"
+#import "UISegmentedControl+InitHelpers.h"
 
 
 @interface SettingsViewController : UIViewController <UITextFieldDelegate> {
@@ -18,6 +19,8 @@
 	NSMutableDictionary *clickSoundNamesToFileNames;
 }
 @property (nonatomic, retain) Click	*click;
+@property (nonatomic, retain) UISegmentedControl *clickSoundValue;
+
 
 - (void)beatsValueDidChange:(id)sender;
 - (void)clickSoundValueDidChange:(id)sender;
