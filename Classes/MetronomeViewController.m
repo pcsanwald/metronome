@@ -17,7 +17,8 @@ const int tempoRange = 200;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    return self;
+	
+	return self;
 }
 
 - (id)init
@@ -118,27 +119,21 @@ const int tempoRange = 200;
 	} else {
 		[click setIsClicking:YES];
 		[clickerButton setTitle:@"Stop" forState:UIControlStateNormal];
-		
-		// This is kind of a hack to smooth out the timer, as the first click
-		// is often not timed correctly, and happens too fast, which is a bad user
-		// experience. sleeping for half the click interval seems better from a UX perspective
-		[NSThread sleepForTimeInterval:[click clickRateInSeconds]];
-		
+		[[NSThread currentThread] setThreadPriority:1.0];
 		clickTimer = [NSTimer scheduledTimerWithTimeInterval:[click clickRateInSeconds] target:self selector:@selector(click:) userInfo:nil repeats:YES];
 	}
 
 }
 
 - (void)click:(id)sender
-{
-	
+{	
 	CABasicAnimation *fade = [CABasicAnimation animationWithKeyPath:@"opacity"];
-	[fade setDuration:[click clickRateInSeconds]];
 	[fade setFromValue:[NSNumber numberWithFloat:0.0]];
 	[fade setToValue:[NSNumber numberWithFloat:1.0]];
 	[fade setDelegate:self];
-	[[clickStatus layer] addAnimation:fade forKey:@"opacity"];
 	
+	[[clickStatus layer] addAnimation:fade forKey:@"opacity"];
+	[fade setDuration:[click clickRateInSeconds]];
 	[clickStatus setText:[NSString stringWithFormat:@"%d",[click currentBeat]]];
 	AudioServicesPlaySystemSound([click clickSound]);
 		

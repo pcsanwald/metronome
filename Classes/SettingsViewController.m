@@ -16,8 +16,8 @@
 {
 	[beatsValue setSelectedSegmentIndex:[click numberOfBeatsToDisplay]-1];
 	[beatsValue addTarget:self action:@selector(beatsValueDidChange:) forControlEvents:UIControlEventValueChanged];
-	[clickSoundValue addTarget:self action:@selector(clickSoundValueDidChange:) forControlEvents:UIControlEventValueChanged];
-		
+	
+	[clickSoundValue addTarget:self action:@selector(clickSoundValueDidChange:) forControlEvents:UIControlEventValueChanged];		
 }
 
 - (void)beatsValueDidChange:(id)sender
@@ -37,10 +37,15 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	clickSoundNamesToFileNames = [[NSMutableDictionary alloc] initWithCapacity:2];
+	clickSoundNamesToFileNames = [[NSMutableDictionary alloc] initWithCapacity:3];
 	[clickSoundNamesToFileNames setObject:@"hihat" forKey:@"hi hat"];
 	[clickSoundNamesToFileNames setObject:@"stick" forKey:@"rim shot"];
 
+	/*
+	NSArray *titleArray = [clickSoundNamesToFileNames allKeys];
+	clickSoundValue = [[UISegmentedControl alloc] initWithItems:titleArray];
+	*/
+	
 	NSArray *keyArray = [clickSoundNamesToFileNames allKeysForObject:[click clickSoundName]];	
 	
 	/*

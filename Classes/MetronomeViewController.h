@@ -25,7 +25,7 @@
 	
 	UIBarButtonItem *settingsButton;
 	
-	SettingsViewController *settingsViewController;
+	SettingsViewController *settingsViewController;	
 }
 - (IBAction)clickerPressed:(id)sender;
 - (IBAction)tempoSliderChanged:(id)sender;
