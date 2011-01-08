@@ -27,8 +27,20 @@
 		655793BD12A99ED90072604E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655793BC12A99ED90072604E /* AudioToolbox.framework */; };
 		655793D312A9A0C80072604E /* Click.m in Sources */ = {isa = PBXBuildFile; fileRef = 655793D212A9A0C80072604E /* Click.m */; };
 		655794B112AADBBE0072604E /* hihat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 655794B012AADBBE0072604E /* hihat.wav */; };
+		6561CEFD12D9041800F55336 /* GreenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6561CEFC12D9041800F55336 /* GreenButton.png */; };
+		6561CF0412D9049D00F55336 /* SmallGreenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6561CF0312D9049D00F55336 /* SmallGreenButton.png */; };
+		6561CF0612D9054D00F55336 /* RedButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6561CF0512D9054C00F55336 /* RedButton.png */; };
 		6584E32912ABD3C200AD6DFB /* FileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6584E32712ABD3C200AD6DFB /* FileHelper.m */; };
 		659DC67F12CD96DA004D6653 /* stick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659DC67E12CD96DA004D6653 /* stick.wav */; };
+		65E4584412D8F73C00194F04 /* GreenButton.opacity in Resources */ = {isa = PBXBuildFile; fileRef = 65E4584312D8F73C00194F04 /* GreenButton.opacity */; };
+		65E4584612D8F78500194F04 /* SmallGreenButton.opacity in Resources */ = {isa = PBXBuildFile; fileRef = 65E4584512D8F78400194F04 /* SmallGreenButton.opacity */; };
+		65FCD33112D6BDCB00E24225 /* Icon-AppStore.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65FCD33012D6BDCA00E24225 /* Icon-AppStore.jpg */; };
+		65FCD33312D6BDD000E24225 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FCD33212D6BDD000E24225 /* Icon-Small.png */; };
+		65FCD33512D6BDD500E24225 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FCD33412D6BDD400E24225 /* Icon-Small@2x.png */; };
+		65FCD33712D6BDD900E24225 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FCD33612D6BDD900E24225 /* Icon-Small-50.png */; };
+		65FCD33912D6BDDE00E24225 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FCD33812D6BDDD00E24225 /* Icon-72.png */; };
+		65FCD33B12D6BDE200E24225 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FCD33A12D6BDE200E24225 /* Icon@2x.png */; };
+		65FCD33D12D6BDE800E24225 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 65FCD33C12D6BDE800E24225 /* iTunesArtwork */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,9 +71,21 @@
 		655793D112A9A0C80072604E /* Click.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Click.h; sourceTree = "<group>"; };
 		655793D212A9A0C80072604E /* Click.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Click.m; sourceTree = "<group>"; };
 		655794B012AADBBE0072604E /* hihat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hihat.wav; sourceTree = "<group>"; };
+		6561CEFC12D9041800F55336 /* GreenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenButton.png; sourceTree = "<group>"; };
+		6561CF0312D9049D00F55336 /* SmallGreenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SmallGreenButton.png; sourceTree = "<group>"; };
+		6561CF0512D9054C00F55336 /* RedButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedButton.png; sourceTree = "<group>"; };
 		6584E32612ABD3C200AD6DFB /* FileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelper.h; sourceTree = "<group>"; };
 		6584E32712ABD3C200AD6DFB /* FileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelper.m; sourceTree = "<group>"; };
 		659DC67E12CD96DA004D6653 /* stick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = stick.wav; sourceTree = "<group>"; };
+		65E4584312D8F73C00194F04 /* GreenButton.opacity */ = {isa = PBXFileReference; lastKnownFileType = file; path = GreenButton.opacity; sourceTree = "<group>"; };
+		65E4584512D8F78400194F04 /* SmallGreenButton.opacity */ = {isa = PBXFileReference; lastKnownFileType = file; path = SmallGreenButton.opacity; sourceTree = "<group>"; };
+		65FCD33012D6BDCA00E24225 /* Icon-AppStore.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Icon-AppStore.jpg"; sourceTree = "<group>"; };
+		65FCD33212D6BDD000E24225 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		65FCD33412D6BDD400E24225 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		65FCD33612D6BDD900E24225 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		65FCD33812D6BDDD00E24225 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		65FCD33A12D6BDE200E24225 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		65FCD33C12D6BDE800E24225 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Metronome-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Metronome-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +167,18 @@
 				8D1107310486CEB800E47090 /* Metronome-Info.plist */,
 				654D385512CD817F00EA1E63 /* Metronome_Icon.opacity */,
 				654D385712CD821A00EA1E63 /* Icon.png */,
+				65FCD33012D6BDCA00E24225 /* Icon-AppStore.jpg */,
+				65FCD33212D6BDD000E24225 /* Icon-Small.png */,
+				65FCD33412D6BDD400E24225 /* Icon-Small@2x.png */,
+				65FCD33612D6BDD900E24225 /* Icon-Small-50.png */,
+				65FCD33812D6BDDD00E24225 /* Icon-72.png */,
+				65FCD33A12D6BDE200E24225 /* Icon@2x.png */,
+				65FCD33C12D6BDE800E24225 /* iTunesArtwork */,
+				65E4584312D8F73C00194F04 /* GreenButton.opacity */,
+				65E4584512D8F78400194F04 /* SmallGreenButton.opacity */,
+				6561CEFC12D9041800F55336 /* GreenButton.png */,
+				6561CF0312D9049D00F55336 /* SmallGreenButton.png */,
+				6561CF0512D9054C00F55336 /* RedButton.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -226,6 +262,18 @@
 				65007ED012CFE35B00A8FECF /* MainWindow-iPad.xib in Resources */,
 				65007ED812CFE43F00A8FECF /* MetronomeViewController-iPad.xib in Resources */,
 				65007EDC12CFE48100A8FECF /* SettingsViewController-iPad.xib in Resources */,
+				65FCD33112D6BDCB00E24225 /* Icon-AppStore.jpg in Resources */,
+				65FCD33312D6BDD000E24225 /* Icon-Small.png in Resources */,
+				65FCD33512D6BDD500E24225 /* Icon-Small@2x.png in Resources */,
+				65FCD33712D6BDD900E24225 /* Icon-Small-50.png in Resources */,
+				65FCD33912D6BDDE00E24225 /* Icon-72.png in Resources */,
+				65FCD33B12D6BDE200E24225 /* Icon@2x.png in Resources */,
+				65FCD33D12D6BDE800E24225 /* iTunesArtwork in Resources */,
+				65E4584412D8F73C00194F04 /* GreenButton.opacity in Resources */,
+				65E4584612D8F78500194F04 /* SmallGreenButton.opacity in Resources */,
+				6561CEFD12D9041800F55336 /* GreenButton.png in Resources */,
+				6561CF0412D9049D00F55336 /* SmallGreenButton.png in Resources */,
+				6561CF0612D9054D00F55336 /* RedButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

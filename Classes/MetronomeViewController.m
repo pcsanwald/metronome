@@ -102,7 +102,7 @@ const int tempoRange = 200;
 	[[button layer] setCornerRadius:8.0f];
 	[[button layer] setMasksToBounds:YES];
 	[[button layer] setBorderWidth:1.0f];
-	[[button layer] setBorderColor:[[UIColor grayColor] CGColor]];
+	[[button layer] setBorderColor:[[UIColor blackColor] CGColor]];
 	
 	[button setBackgroundColor:[UIColor blackColor]];
 	[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -111,13 +111,19 @@ const int tempoRange = 200;
 - (IBAction)clickerPressed:(id)sender
 {
 	if ([click isClicking]) {
+		// enable the idle timer when the clicking is turned off
+		[[UIApplication sharedApplication] setIdleTimerDisabled:NO];
 		[click setIsClicking:NO];
+		[clickerButton setBackgroundImage:[UIImage imageNamed:@"GreenButton.png"] forState:UIControlStateNormal];
 		[clickerButton setTitle:@"Start" forState:UIControlStateNormal];
 		[clickTimer invalidate];
 		[clickStatus setText:[NSString stringWithFormat:@"%d",[click numberOfBeatsToDisplay]]];
 		[click setClickCount:0];
 	} else {
+		// disable the idle timer while the metronome is clicking.
+		[[UIApplication sharedApplication] setIdleTimerDisabled:YES];
 		[click setIsClicking:YES];
+		[clickerButton setBackgroundImage:[UIImage imageNamed:@"RedButton.png"] forState:UIControlStateNormal];
 		[clickerButton setTitle:@"Stop" forState:UIControlStateNormal];
 		[[NSThread currentThread] setThreadPriority:1.0];
 		clickTimer = [NSTimer scheduledTimerWithTimeInterval:[click clickRateInSeconds] target:self selector:@selector(click:) userInfo:nil repeats:YES];
