@@ -3,7 +3,7 @@
 //  Metronome
 //
 //  Created by paul sanwald on 12/27/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Copyright 2010 Pineapple Street Software. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
