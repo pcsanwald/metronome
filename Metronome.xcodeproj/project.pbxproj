@@ -137,6 +137,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				65EC9F6D12DA8ACC00901AFA /* Image Source Files */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -165,7 +166,6 @@
 				655794B012AADBBE0072604E /* hihat.wav */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Metronome-Info.plist */,
-				654D385512CD817F00EA1E63 /* Metronome_Icon.opacity */,
 				654D385712CD821A00EA1E63 /* Icon.png */,
 				65FCD33012D6BDCA00E24225 /* Icon-AppStore.jpg */,
 				65FCD33212D6BDD000E24225 /* Icon-Small.png */,
@@ -174,8 +174,6 @@
 				65FCD33812D6BDDD00E24225 /* Icon-72.png */,
 				65FCD33A12D6BDE200E24225 /* Icon@2x.png */,
 				65FCD33C12D6BDE800E24225 /* iTunesArtwork */,
-				65E4584312D8F73C00194F04 /* GreenButton.opacity */,
-				65E4584512D8F78400194F04 /* SmallGreenButton.opacity */,
 				6561CEFC12D9041800F55336 /* GreenButton.png */,
 				6561CF0312D9049D00F55336 /* SmallGreenButton.png */,
 				6561CF0512D9054C00F55336 /* RedButton.png */,
@@ -201,6 +199,16 @@
 				65007ECF12CFE35B00A8FECF /* MainWindow-iPad.xib */,
 			);
 			name = "Resources-iPad";
+			sourceTree = "<group>";
+		};
+		65EC9F6D12DA8ACC00901AFA /* Image Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				65E4584312D8F73C00194F04 /* GreenButton.opacity */,
+				654D385512CD817F00EA1E63 /* Metronome_Icon.opacity */,
+				65E4584512D8F78400194F04 /* SmallGreenButton.opacity */,
+			);
+			name = "Image Source Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
