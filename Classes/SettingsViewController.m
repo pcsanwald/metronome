@@ -37,15 +37,12 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	[super viewDidLoad];
+	
 	clickSoundNamesToFileNames = [[NSMutableDictionary alloc] initWithCapacity:3];
 	[clickSoundNamesToFileNames setObject:@"hihat" forKey:@"hi hat"];
 	[clickSoundNamesToFileNames setObject:@"stick" forKey:@"rim shot"];
 
-	/*
-	NSArray *titleArray = [clickSoundNamesToFileNames allKeys];
-	clickSoundValue = [[UISegmentedControl alloc] initWithItems:titleArray];
-	*/
-	
 	NSArray *keyArray = [clickSoundNamesToFileNames allKeysForObject:[click clickSoundName]];	
 	
 	/*

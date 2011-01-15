@@ -34,7 +34,7 @@
 	
 	navController = [[UINavigationController alloc] initWithRootViewController:mvc];
 	[[navController navigationBar] setBarStyle:UIBarStyleBlack];
-	[window addSubview:[navController view]];
+	[window setRootViewController:navController];
 	
     [self.window makeKeyAndVisible];	
     return YES;

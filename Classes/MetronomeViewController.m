@@ -16,8 +16,7 @@ const int tempoRange = 200;
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-	
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];	
 	return self;
 }
 
@@ -38,6 +37,10 @@ const int tempoRange = 200;
 
 - (void)viewWillAppear:(BOOL)animated
 {
+	if (settingsViewController) {
+		[settingsViewController release];
+		settingsViewController = nil;
+	}
 	if (![click isClicking]) {
 		[clickStatus setText:[NSString stringWithFormat:@"%d",[click numberOfBeatsToDisplay]]];
 	}
@@ -130,6 +133,7 @@ const int tempoRange = 200;
 	}
 
 }
+
 
 - (void)click:(id)sender
 {	
