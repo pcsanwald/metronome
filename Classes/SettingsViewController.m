@@ -63,13 +63,13 @@
 }
 
 /*
- * Don't allow autorotation for settings
+ * allow autorotation for settings
  *
  */
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-	//return YES;
-	return (interfaceOrientation == UIInterfaceOrientationPortrait);
+	return YES;
+	//return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (void)didReceiveMemoryWarning {
