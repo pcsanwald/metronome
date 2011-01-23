@@ -15,8 +15,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[beatsValue setSelectedSegmentIndex:[click numberOfBeatsToDisplay]-1];
-	[beatsValue addTarget:self action:@selector(beatsValueDidChange:) forControlEvents:UIControlEventValueChanged];
-	
+	[beatsValue addTarget:self action:@selector(beatsValueDidChange:) forControlEvents:UIControlEventValueChanged];	
 	[clickSoundValue addTarget:self action:@selector(clickSoundValueDidChange:) forControlEvents:UIControlEventValueChanged];		
 }
 
@@ -40,24 +39,44 @@
 	[super viewDidLoad];
 	
 	clickSoundNamesToFileNames = [[NSMutableDictionary alloc] initWithCapacity:3];
-	[clickSoundNamesToFileNames setObject:@"hihat" forKey:@"hi hat"];
-	[clickSoundNamesToFileNames setObject:@"stick" forKey:@"rim shot"];
+	[clickSoundNamesToFileNames setObject:@"hihat" forKey:@"Hi Hat"];
+	[clickSoundNamesToFileNames setObject:@"stick" forKey:@"Rim Shot"];
+	[clickSoundNamesToFileNames setObject:@"brush" forKey:@"Brush"];
 
+	/* 
+	 * for some reason, releasing clickSoundValue and re-initializing doesn't seem to
+	 * work. so, removing all the segments and re-initializing seems the only
+	 * way to go for now.
+	 * TODO: figure out why releasing and re-initializing doesn't behave as I
+	 * would initially expect.
+	 *
+	 */
+	[clickSoundValue removeAllSegments];
+	
+	NSEnumerator *enumerator = [clickSoundNamesToFileNames keyEnumerator];
+	NSString* key;
+	int clickSoundValueIndex = 0;
+	while ((key = (NSString*)[enumerator nextObject])) {
+		[clickSoundValue insertSegmentWithTitle:key atIndex:clickSoundValueIndex animated:YES];
+		NSLog(@"inserting %@ at index %d",key,clickSoundValueIndex);
+		clickSoundValueIndex++;
+	}
+	
 	NSArray *keyArray = [clickSoundNamesToFileNames allKeysForObject:[click clickSoundName]];	
 	
 	/*
-	 * initialize the UISegmentedControlValue. sure seems like there should be an easier 
+	 * initialize the selected UISegmentedControlValue. sure seems like there should be an easier 
 	 * way to do this.
 	 */
 	NSString *value = nil;
 	NSString *fileName;
-	for (NSString* key in keyArray) {		
+	for (NSString* key in keyArray) {
 		value = (NSString*)[clickSoundNamesToFileNames objectForKey:key];
 		fileName = key;
 	}
 	if (value != nil) {
 		[clickSoundValue setSelectedSegmentForTitle:fileName];
-	}	
+	}
 	
     [super viewDidLoad];
 }
