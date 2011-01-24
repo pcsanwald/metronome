@@ -18,6 +18,7 @@
 		65007ED812CFE43F00A8FECF /* MetronomeViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65007ED712CFE43F00A8FECF /* MetronomeViewController-iPad.xib */; };
 		65007EDC12CFE48100A8FECF /* SettingsViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65007EDB12CFE48100A8FECF /* SettingsViewController-iPad.xib */; };
 		65149B8212ECF6CF007926A4 /* brush.wav in Resources */ = {isa = PBXBuildFile; fileRef = 65149B8112ECF6CF007926A4 /* brush.wav */; };
+		65149B8E12ECF867007926A4 /* snare.wav in Resources */ = {isa = PBXBuildFile; fileRef = 65149B8D12ECF867007926A4 /* snare.wav */; };
 		651E406912B9AFDB002323BA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651E406812B9AFDB002323BA /* QuartzCore.framework */; };
 		654D36A412C9745400EA1E63 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D36A212C9745400EA1E63 /* SettingsViewController.m */; };
 		654D36A512C9745400EA1E63 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 654D36A312C9745400EA1E63 /* SettingsViewController.xib */; };
@@ -61,6 +62,7 @@
 		65007ED712CFE43F00A8FECF /* MetronomeViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "MetronomeViewController-iPad.xib"; sourceTree = "<group>"; };
 		65007EDB12CFE48100A8FECF /* SettingsViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "SettingsViewController-iPad.xib"; sourceTree = "<group>"; };
 		65149B8112ECF6CF007926A4 /* brush.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = brush.wav; sourceTree = "<group>"; };
+		65149B8D12ECF867007926A4 /* snare.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = snare.wav; sourceTree = "<group>"; };
 		651E406812B9AFDB002323BA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		654D36A112C9745400EA1E63 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		654D36A212C9745400EA1E63 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			children = (
 				659DC67E12CD96DA004D6653 /* stick.wav */,
 				65149B8112ECF6CF007926A4 /* brush.wav */,
+				65149B8D12ECF867007926A4 /* snare.wav */,
 				655794B012AADBBE0072604E /* hihat.wav */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Metronome-Info.plist */,
@@ -293,6 +296,7 @@
 				6561CF0612D9054D00F55336 /* RedButton.png in Resources */,
 				65ECA00F12DAB64700901AFA /* Icon-iPad.png in Resources */,
 				65149B8212ECF6CF007926A4 /* brush.wav in Resources */,
+				65149B8E12ECF867007926A4 /* snare.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,7 +325,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Paul Sanwald (B64H838PNA)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -329,7 +333,7 @@
 				GCC_PREFIX_HEADER = Metronome_Prefix.pch;
 				INFOPLIST_FILE = "Metronome-Info.plist";
 				PRODUCT_NAME = "BeatDown Metronome";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EF917F4F-24BA-4D89-B4AB-602F9619F4E5";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

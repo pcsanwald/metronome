@@ -41,7 +41,7 @@
 	clickSoundNamesToFileNames = [[NSMutableDictionary alloc] initWithCapacity:3];
 	[clickSoundNamesToFileNames setObject:@"hihat" forKey:@"Hi Hat"];
 	[clickSoundNamesToFileNames setObject:@"stick" forKey:@"Rim Shot"];
-	[clickSoundNamesToFileNames setObject:@"brush" forKey:@"Brush"];
+	[clickSoundNamesToFileNames setObject:@"snare" forKey:@"Snare"];
 
 	/* 
 	 * for some reason, releasing clickSoundValue and re-initializing doesn't seem to
